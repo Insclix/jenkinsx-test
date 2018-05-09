@@ -4,7 +4,7 @@ pipeline {
     }
     environment {
       ORG               = 'Insclix'
-      APP_NAME          = 'jenkins-x-test'
+      APP_NAME          = 'jenkinsx-test'
       CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     }
     stages {
