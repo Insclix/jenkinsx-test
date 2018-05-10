@@ -2,8 +2,7 @@ CHART_REPO := http://jenkins-x-chartmuseum:8080
 CURRENT=$(pwd)
 NAME := jenkinsx-test
 OS := $(shell uname)
-#RELEASE_VERSION := $(shell cat ../../VERSION)
-RELEASE_VERSION := 0.0.12
+RELEASE_VERSION := $(shell cat ../../VERSION)
 
 build: clean
 	rm -rf requirements.lock
