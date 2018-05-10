@@ -1,6 +1,6 @@
 CHART_REPO := http://jenkins-x-chartmuseum:8080
 CURRENT=$(pwd)
-NAME := randy_may
+NAME := jenkinsx-test
 OS := $(shell uname)
 RELEASE_VERSION := $(shell cat ../../VERSION)
 
