@@ -3,7 +3,7 @@ pipeline {
       label "jenkins-maven"
     }
     environment {
-      ORG               = 'Insclix'
+      ORG               = 'insclix'
       APP_NAME          = 'jenkinsx-test'
       CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     }
