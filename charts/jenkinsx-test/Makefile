@@ -44,6 +44,6 @@ else
 endif
 	git add --all
 	git commit -m "release $(RELEASE_VERSION)" --allow-empty # if first release then no version update is performed
-	// Todo - Uncomment this
+	# Todo - Uncomment these lines
 	#git tag -fa v$(RELEASE_VERSION) -m "Release version $(RELEASE_VERSION)"
 	#git push origin v$(RELEASE_VERSION)
