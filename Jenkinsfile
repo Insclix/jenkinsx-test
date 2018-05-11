@@ -77,9 +77,6 @@ pipeline {
               // release the helm chart
               sh 'make release'
 
-              // Set the namespace
-              sh 'jx ns microapp'
-
               // Display environments
               sh 'jx get env'
 
