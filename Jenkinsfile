@@ -77,12 +77,6 @@ pipeline {
               // release the helm chart
               sh 'make release'
 
-              // Display environments
-              sh 'jx get env'
-
-              // Display current environment
-              sh 'jx env -b'
-
               // promote through all 'Auto' promotion Environments
               sh 'jx promote -b --all-auto --timeout 1h --version \$(cat ../../VERSION) --verbose=true'
             }
