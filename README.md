@@ -3,3 +3,6 @@ Build project:
 
 Deploy project
 ./mvnw dockerfile:push -Ddockerfile.username=******* -Ddockerfile.password=*******
+
+Build & Deploy 
+./mvnw clean install dockerfile:push -Ddockerfile.username=******* -Ddockerfile.password=*******
