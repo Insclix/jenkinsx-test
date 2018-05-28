@@ -54,7 +54,7 @@
 				<version>1.1.1</version>
 				<configuration>
 					<imageName>${docker.image.prefix}</imageName>
-					<dockerDirectory>docker</dockerDirectory>
+					<dockerDirectory>/</dockerDirectory>
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
