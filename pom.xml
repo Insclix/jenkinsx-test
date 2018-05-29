@@ -53,8 +53,9 @@
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>1.1.1</version>
 				<configuration>
-					<imageName>${docker.image.prefix}</imageName>
-					<dockerDirectory>/</dockerDirectory>
+					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+					<dockerDirectory>.</dockerDirectory>
+					<serverId>docker-hub</serverId>
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
