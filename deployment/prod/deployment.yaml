@@ -1,18 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: jenkinsx-test-dev
+  name: jenkinsx-test-prod
   labels:
-    app: jenkinsx-test-dev
+    app: jenkinsx-test-prod
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jenkinsx-test-dev
+      app: jenkinsx-test-prod
   template:
     metadata:
       labels:
-        app: jenkinsx-test-dev
+        app: jenkinsx-test-prod
     spec:
       containers:
       - env:
@@ -20,7 +20,7 @@ spec:
           value: "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1"
         image: docker.io/randymay/jenkinsx-test:0.0.2-SNAPSHOT
         imagePullPolicy: Always
-        name: jenkinsx-test-dev
+        name: jenkinsx-test-prod
         ports:
         - containerPort: 8080
         resources:
