@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jenkinsx-test-dev
+  labels:
+    app: jenkinsx-test-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkinsx-test-dev
+  template:
+    metadata:
+      labels:
+        app: jenkinsx-test-dev
+    spec:
+      containers:
+      - env:
+        - name: JAVA_OPTS
+          value: -Xmx4096m
+        image: docker.io/randymay/jenkinsx-test:0.0.2-SNAPSHOT
+        imagePullPolicy: Always
+        name: jenkinsx-test-dev
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always
