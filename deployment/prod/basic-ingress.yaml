@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: basic-ingress
+  name: jenkinsx-test-prod
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: jenkinsx-test
+    kubernetes.io/ingress.global-static-ip-name: jenkinsx-test-prod
 spec:
   backend:
     serviceName: jenkinsx-test-prod

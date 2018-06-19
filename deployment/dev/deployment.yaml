@@ -18,7 +18,7 @@ spec:
       - env:
         - name: JAVA_OPTS
           value: "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1"
-        image: docker.io/randymay/jenkinsx-test:0.0.2-SNAPSHOT
+        image: docker.io/randymay/jenkinsx-test:latest
         imagePullPolicy: Always
         name: jenkinsx-test-dev
         ports:
@@ -29,3 +29,5 @@ spec:
           limits:
             memory: "4096Mi"
       restartPolicy: Always
+      nodeSelector:
+        cloud.google.com/gke-nodepool: default-pool
