@@ -18,7 +18,7 @@ spec:
       - env:
         - name: JAVA_OPTS
           value: "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1"
-        image: docker.io/randymay/jenkinsx-test:latest
+        image: docker.io/insclix/jenkinsx-test:latest
         imagePullPolicy: Always
         name: jenkinsx-test-prod
         ports:
