@@ -57,7 +57,7 @@
 					<!-- optionally overwrite tags every time image is built with docker:build -->
 					<forceTags>true</forceTags>
 					<imageTags>
-						<imageTag>${project.version}</imageTag>
+						<!--<imageTag>${project.version}</imageTag>-->
 						<imageTag>latest</imageTag>
 					</imageTags>
 					<dockerDirectory>.</dockerDirectory>
