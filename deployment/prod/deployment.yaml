@@ -1,0 +1,43 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jenkinsx-test-prod
+  labels:
+    app: jenkinsx-test-prod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: jenkinsx-test-prod
+  template:
+    metadata:
+      labels:
+        app: jenkinsx-test-prod
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - jenkinsx-test-prod
+            topologyKey: "kubernetes.io/hostname"
+      containers:
+      - env:
+        - name: JAVA_OPTS
+          value: "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1"
+        image: docker.io/insclix/jenkinsx-test:latest
+        imagePullPolicy: Always
+        name: jenkinsx-test-prod
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "4096Mi"
+          limits:
+            memory: "4096Mi"
+      restartPolicy: Always
+      nodeSelector:
+        cloud.google.com/gke-nodepool: default-pool
