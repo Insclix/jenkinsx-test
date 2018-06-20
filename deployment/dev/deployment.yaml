@@ -14,6 +14,16 @@ spec:
       labels:
         app: jenkinsx-test-dev
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - jenkinsx-test-dev
+            topologyKey: "kubernetes.io/hostname"
       containers:
       - env:
         - name: JAVA_OPTS
