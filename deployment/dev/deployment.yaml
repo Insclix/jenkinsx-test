@@ -42,4 +42,4 @@ spec:
       nodeSelector:
         cloud.google.com/gke-nodepool: default-pool
       imagePullSecrets:
-      - name: insclix-registry-key
+      - name: randymay-registry-key
