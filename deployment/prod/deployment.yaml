@@ -28,7 +28,7 @@ spec:
       - env:
         - name: JAVA_OPTS
           value: "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1"
-        image: docker.io/insclix/jenkinsx-test:latest
+        image: docker.io/insclixtest/jenkinsx-test:latest
         imagePullPolicy: Always
         name: jenkinsx-test-prod
         ports:
@@ -41,3 +41,5 @@ spec:
       restartPolicy: Always
       nodeSelector:
         cloud.google.com/gke-nodepool: default-pool
+      imagePullSecrets:
+      - name: insclix-registry-key
