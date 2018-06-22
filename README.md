@@ -1,5 +1,5 @@
 # Notes
-Before attempting to deploy to Docker Hub, ensure you have the appropriate <server> tag set up in the format described here: https://github.com/spotify/docker-maven-plugin#using-encrypted-passwords-for-authentication
+Before attempting to deploy to Docker Hub, ensure you have the appropriate <server> tag set up in settings.xml.  The format is described here: https://github.com/spotify/docker-maven-plugin#using-encrypted-passwords-for-authentication
 
 # Commands
 ### To build the docker image:
