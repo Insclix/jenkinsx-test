@@ -36,8 +36,10 @@ spec:
         resources:
           requests:
             memory: "4096Mi"
+            cpu: 2
           limits:
             memory: "4096Mi"
+            cpu: 2
       restartPolicy: Always
       nodeSelector:
         cloud.google.com/gke-nodepool: default-pool
